@@ -1,0 +1,9 @@
+{
+  "name": "unity-builder",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node",
+  "features": {
+    "ghcr.io/devcontainers/features/git-lfs:1": {}
+  },
+  "remoteUser": "node",
+  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder} && yarn"
+}
