@@ -237,6 +237,10 @@ class Input {
     return Input.getInput('dockerWorkspacePath') ?? '/github/workspace';
   }
 
+  static get dockerWorkspacePathWindowsOverride(): string {
+    return Input.getInput('dockerWorkspacePathWindowsOverride') ?? 'c:/github/workspace';
+  }
+
   static get dockerCpuLimit(): string {
     return Input.getInput('dockerCpuLimit') ?? os.cpus().length.toString();
   }
