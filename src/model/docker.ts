@@ -94,13 +94,15 @@ class Docker {
       actionFolder,
       gitPrivateToken,
       dockerWorkspacePath,
+      dockerWorkspacePathWindowsOverride,
       dockerCpuLimit,
       dockerMemoryLimit,
       dockerIsolationMode,
     } = parameters;
 
+    var workspacePath = dockerWorkspacePathWindowsOverride !== "" ? dockerWorkspacePathWindowsOverride : `c:${dockerWorkspacePath}`;
     return `docker run \
-            --workdir c:${dockerWorkspacePath} \
+            --workdir ${workspacePath} \
             --rm \
             ${ImageEnvironmentFactory.getEnvVarString(parameters)} \
             --env GITHUB_WORKSPACE=c:${dockerWorkspacePath} \
