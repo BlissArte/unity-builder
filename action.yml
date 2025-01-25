@@ -257,6 +257,9 @@ inputs:
     description:
       'The path to mount the workspace inside the docker container. For windows, leave out the drive letter. For example
       c:/github/workspace should be defined as /github/workspace'
+  dockerWorkspacePathWindowsOverride:
+    default: ''
+    required: false
   skipActivation:
     default: 'false'
     required: false
