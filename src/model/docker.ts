@@ -102,7 +102,7 @@ class Docker {
 
     var workspacePath = dockerWorkspacePathWindowsOverride !== "" ? dockerWorkspacePathWindowsOverride : `c:${dockerWorkspacePath}`;
     return `docker run \
-            --workdir ${workspacePath} \
+            --workdir "c:/github/workspace" \
             --rm \
             ${ImageEnvironmentFactory.getEnvVarString(parameters)} \
             --env GITHUB_WORKSPACE=c:${dockerWorkspacePath} \
